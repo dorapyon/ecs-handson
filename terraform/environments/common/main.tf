@@ -10,7 +10,7 @@ module "githubactions_role" {
 
   sys_name       = local.sys_name
   env_name       = local.env_name
-  github_owner   = "ice1203"
+  github_owner   = "dorapyon"
   github_repo    = "Handson_with_Secure_container_operations"
   aws_account_id = local.aws_account_id
 

@@ -19,7 +19,7 @@ on:
 
 env:
   ROOT_MODULE_PATH: terraform/environments/dev
-  TFSTATE_BUCKET: tmp-hands-on-tf-state-${{ secrets.AWS_ACCOUNT_ID }}
+  TFSTATE_BUCKET: delete-test-kohei
   AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
   PLAN_ROLE_ARN: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/ecs-handson-githubactions
   APPLY_ROLE_ARN: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/ecs-handson-githubactions

@@ -106,7 +106,7 @@ resource "aws_security_group" "webapp_ecs_task" {
   description = "${var.sys_name}-${var.env_name}-${var.subsys_name}-ecs"
   vpc_id      = var.vpc_id
   ingress {
-    #description = "Allow traffic from ALB"
+    description     = "Allow traffic from ALB"
     security_groups = [aws_security_group.webapp_alb.id]
     from_port       = var.docker_container_port
     to_port         = var.docker_container_port
@@ -137,13 +137,7 @@ resource "aws_security_group" "webapp_alb" {
     protocol    = "-1"
     cidr_blocks = var.alb_allowed_cidr_blocks
   }
-  egress {
-    from_port = 0
-    to_port   = 0
-    protocol  = "-1"
-    #cidr_blocks = var.alb_allowed_cidr_blocks
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+
 
 }
 #trivy:ignore:AVD-AWS-0053
